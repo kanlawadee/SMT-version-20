@@ -1,0 +1,46 @@
+/* Container for the entire smart ticket application */
+.smart-ticket-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Header section styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d47a1;
+  color: white;
+  padding: 10px 20px;
+  
+}
+
+/* Title styling */
+.header h2 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+/* User information styling */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  font-size: 1em;
+}
+
+.user-info button {
+  background-color: white;
+  color: #000000;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+}
+
