@@ -12,6 +12,7 @@ function Navbar() {
   return (
     <div className="smart-ticket-container">
       <div className="header">
+        
         <h2> SMART TICKET </h2>
         <div className="user-info">
           <span> ชื่อผู้ใช้ {username}</span>

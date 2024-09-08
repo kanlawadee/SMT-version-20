@@ -7,7 +7,7 @@ import Navbar from './component/Navbar/navbar'
 import Dashboard from './component/Dashboard/dashboard'
 
 function App() {
-  return (
+  return ( 
     <div className="App">
       <Navbar/>
       <Dashboard />
@@ -24,7 +24,7 @@ export default App;
 //             <Routes>
 //                 <Route path="/" element={<Navbar>< Dashboard/></Navbar>} />
 //                 {/* <Route path="/" element={<Navbar />} /> */}
-//                 {/* <Route path="/" element={<Login />} /> */}
+//                 <Route path="/" element={<Login />} />
 //             </Routes>
 //         </Router>
 //     );
