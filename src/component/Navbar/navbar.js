@@ -1,26 +1,39 @@
 import React, { useState } from 'react';
-import '../Navbar/nav.css'
+import { FaBars, FaSignOutAlt } from 'react-icons/fa'; // For hamburger and logout icon
+import './nav.css'; // Create a separate CSS file for styling
 
-function Navbar() {
-  const [username, setUsername] = useState(''); 
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleLogout = () => {
-    // Implement your logout logic here
-    console.log("Logging out...");
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsOpen(false);
   };
 
   return (
-    <div className="smart-ticket-container">
-      <div className="header">
-        
-        <h2> SMART TICKET </h2>
-        <div className="user-info">
-          <span> ชื่อผู้ใช้ {username}</span>
-          <button onClick={handleLogout}>ออกจากระบบ</button>
-        </div>
+    <div>
+      <div className="top-navbar">
+        <button className="menu-btn" onClick={toggleSidebar}>
+          <FaBars />
+        </button>
+        <h2 className='nav-name'>ชื่อเจ้าหน้าที่จราจร</h2>
       </div>
+
+      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <ul>
+          <li onClick={closeSidebar}>รายการใบสั่ง</li>
+          <li className="logout" onClick={closeSidebar}>
+            <FaSignOutAlt /> ออกจากระบบ
+          </li>
+        </ul>
+      </div>
+
+      {isOpen && <div className="overlay" onClick={toggleSidebar}></div>}
     </div>
   );
-}
+};
 
 export default Navbar;

@@ -1,78 +1,92 @@
-/* Container for the entire smart ticket application */
-.smart-ticket-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Header section styling */
-.header {
+.top-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0d47a1;
+  padding: 15px;
+  background-color: #007bff;
   color: white;
-  padding: 10px 20px;
 }
 
-/* Title styling */
-.header h2 {
-  margin: 0;
-  font-size: 1.8em;
-}
-
-/* User information styling */
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.user-info span {
-  font-size: 1em;
-}
-
-.user-info button {
-  background-color: white;
-  color: #000000;
+.menu-btn {
+  background: none;
   border: none;
-  padding: 5px 10px;
+  font-size: 24px;
+  color: white;
   cursor: pointer;
-  font-size: 1em;
-  border-radius: 4px;
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header h2 {
-    font-size: 1.5em;
-  }
-
-  .user-info {
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 10px;
-  }
+h2 {
+  margin: 0;
 }
 
-@media (max-width: 480px) {
-  .header h2 {
-    font-size: 1.2em;
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -50%; /* Hidden by default (only 50% of screen width) */
+  width: 50%; /* Sidebar covers half the screen */
+  height: 100%;
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto; /* Scrollable if content exceeds height */
+}
+
+.sidebar.open {
+  left: 0; /* Show sidebar only covering half the screen */
+}
+
+/* Automatically collapse after clicking any menu item */
+.sidebar li {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: left 0.3s ease;
+}
+
+.sidebar li:hover {
+  background-color: #ddd;
+}
+
+.sidebar li:active {
+  left: -50%; /* Hide sidebar when item is clicked (simulated in pure CSS) */
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 500;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 50%; /* 50% for mobile view */
   }
 
-  .user-info span {
-    font-size: 0.9em;
+  .top-navbar {
+    padding: 10px;
   }
 
-  .user-info button {
-    padding: 4px 8px;
-    font-size: 0.9em;
+  .menu-btn {
+    font-size: 20px;
   }
 
+  h2 {
+    font-size: 18px;
+  }
 }

@@ -11,6 +11,7 @@ function Dashboard() {
   const [searchQuery, setSearchQuery] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  
 
   useEffect(() => {
     // Fetch ticket data from an API or other data source
@@ -64,7 +65,7 @@ function Dashboard() {
         </LocalizationProvider>
       </div>
 
-      <table>
+      <table class="table table-hover">
         <thead>
           <tr>
             <th>หมายเลขใบสั่ง</th>
@@ -75,7 +76,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          {filteredTickets.map(ticket => (
+          {/* {filteredTickets.map(ticket => (
             <tr key={ticket.หมายเลขใบสั่ง}>
               <td>{ticket.หมายเลขใบสั่ง}</td>
               <td>{ticket.เลขบัตรประชาชน}</td>
@@ -83,10 +84,18 @@ function Dashboard() {
               <td>{ticket.วันที่ออก}</td>
               <td>{ticket.สถานะ}</td>
             </tr>
-          ))}
+          ))} */}
         </tbody>
+          <tr >
+              <td>0001</td>
+              <td>1470801393510</td>
+              <td>กิจพานิช จิตเสีย</td>
+              <td>19/08/2567</td>
+              <td>ยังไม่ชำระ</td>
+            </tr>
       </table>
     </div>
+    
   );
 }
 

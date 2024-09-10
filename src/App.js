@@ -5,12 +5,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './component/Navbar/navbar'
 import Dashboard from './component/Dashboard/dashboard'
+import Mobiledasboard from './component/Dashboard/mobiledasboard'
 
 function App() {
   return ( 
     <div className="App">
       <Navbar/>
-      <Dashboard />
+      <Mobiledasboard/>
+      {/* <Dashboard /> */}
       {/* <Login/> */}
     </div>
   );

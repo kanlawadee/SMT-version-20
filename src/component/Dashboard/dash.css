@@ -12,7 +12,6 @@ table {
   margin-top: 20px;
 }
 
-
   h2 {
     margin-bottom: 20px;
   }
@@ -105,3 +104,9 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
   background-color: #f1f1f1;
 }
+@media (max-width: 480px) {
+  table {
+    
+    
+  }
+  }
